@@ -8,7 +8,7 @@ namespace Parcial_Aplicada_1.Entidades
    public class Articulos
     {
         [Key]
-        public int ProductoID { get; set; }
+        public int ArticuloId { get; set; }
         public string Descripcion { get; set; }
         public int Existencia { get; set; }
         public int Costo { get; set; }
@@ -16,7 +16,7 @@ namespace Parcial_Aplicada_1.Entidades
 
         public Articulos()
         {
-            ProductoID = 0;
+            ArticuloId = 0;
             Descripcion = string.Empty;
             Existencia = 0;
             Costo = 0;
