@@ -1,0 +1,26 @@
+﻿<Window x:Class="Parcial_Aplicada_1.UI.rArticulos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Parcial_Aplicada_1.UI"
+        mc:Ignorable="d"
+        Title="rArticulos" Height="450" Width="800">
+    <Grid>
+        <Label Content="Articulo Id" HorizontalAlignment="Left" Margin="50,50,0,0" VerticalAlignment="Top" Height="36" Width="97"/>
+        <Label Content="Descripcion" HorizontalAlignment="Left" Margin="50,100,0,0" VerticalAlignment="Top"/>
+        <Label Content="Existencia" HorizontalAlignment="Left" Margin="50,150,0,0" VerticalAlignment="Top"/>
+        <Label Content="Costo" HorizontalAlignment="Left" Margin="50,200,0,0" VerticalAlignment="Top"/>
+        <Label Content="Valor Inventario" HorizontalAlignment="Left" Margin="50,250,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ArticulosIdTextBox" Text="{Binding ArticulosId}" HorizontalAlignment="Left" Margin="150,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" />
+        <TextBox x:Name="DescripcionTextBox"  Text="{Binding Descripcion}" HorizontalAlignment="Left" Margin="150,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" />
+        <TextBox x:Name="ExistenciaTextBox" Text="{Binding Existencia}" HorizontalAlignment="Left" Margin="150,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" />
+        <TextBox x:Name="CostoTextBox"       Text="{Binding Costo}" HorizontalAlignment="Left" Margin="150,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" />
+        <TextBox x:Name="ValorInventarioTextBox" Text="{Binding ValorInventario}" HorizontalAlignment="Left" Margin="150,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"/>
+        <Button x:Name="NuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="100,340,0,0" VerticalAlignment="Top" Height="40" Width="60"/>
+        <Button x:Name="GuardarButton" Content="Guarda" HorizontalAlignment="Left" Margin="300,340,0,0" VerticalAlignment="Top" Height="40" Width="60" Click="GuardarButton_Click"/>
+        <Button x:Name="EliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="500,340,0,0" VerticalAlignment="Top" Height="40" Width="60"/>
+        <Button x:Name="BuscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="255,50,0,0" VerticalAlignment="Top" Click="BuscarButton_Click" Height="40" Width="60"/>
+
+    </Grid>
+</Window>

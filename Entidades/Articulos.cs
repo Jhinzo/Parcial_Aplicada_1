@@ -11,8 +11,8 @@ namespace Parcial_Aplicada_1.Entidades
         public int ArticuloId { get; set; }
         public string Descripcion { get; set; }
         public int Existencia { get; set; }
-        public int Costo { get; set; }
-        public int ValorInventario { get; set; }
+        public double Costo { get; set; }
+        public double ValorInventario { get; set; }
 
         public Articulos()
         {
@@ -24,3 +24,7 @@ namespace Parcial_Aplicada_1.Entidades
         }
     }
 }
+
+
+
+
