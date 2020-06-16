@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Parcial_Aplicada_1.UI;
 
 namespace Parcial_Aplicada_1
 {
@@ -23,6 +24,12 @@ namespace Parcial_Aplicada_1
         public MainWindow()
         {
             InitializeComponent();
+            
+            }
+        private void rArticuloMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            rArticulos rArticulos = new rArticulos();
+            rArticulos.Show();
         }
     }
-}
+    }
