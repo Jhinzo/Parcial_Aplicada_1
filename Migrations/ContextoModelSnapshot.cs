@@ -17,12 +17,12 @@ namespace Parcial_Aplicada_1.Migrations
 
             modelBuilder.Entity("Parcial_Aplicada_1.Entidades.Articulos", b =>
                 {
-                    b.Property<int>("ProductoID")
+                    b.Property<int>("ArticuloId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Costo")
-                        .HasColumnType("INTEGER");
+                    b.Property<double>("Costo")
+                        .HasColumnType("REAL");
 
                     b.Property<string>("Descripcion")
                         .HasColumnType("TEXT");
@@ -30,10 +30,10 @@ namespace Parcial_Aplicada_1.Migrations
                     b.Property<int>("Existencia")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ValorInventario")
-                        .HasColumnType("INTEGER");
+                    b.Property<double>("ValorInventario")
+                        .HasColumnType("REAL");
 
-                    b.HasKey("ProductoID");
+                    b.HasKey("ArticuloId");
 
                     b.ToTable("Articulos");
                 });

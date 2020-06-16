@@ -10,16 +10,16 @@ namespace Parcial_Aplicada_1.Migrations
                 name: "Articulos",
                 columns: table => new
                 {
-                    ProductoID = table.Column<int>(nullable: false)
+                    ArticuloId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Descripcion = table.Column<string>(nullable: true),
                     Existencia = table.Column<int>(nullable: false),
-                    Costo = table.Column<int>(nullable: false),
-                    ValorInventario = table.Column<int>(nullable: false)
+                    Costo = table.Column<double>(nullable: false),
+                    ValorInventario = table.Column<double>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Articulos", x => x.ProductoID);
+                    table.PrimaryKey("PK_Articulos", x => x.ArticuloId);
                 });
         }
 

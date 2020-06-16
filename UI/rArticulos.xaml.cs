@@ -20,20 +20,10 @@ namespace Parcial_Aplicada_1.UI
     public partial class rArticulos : Window
     {
         private Articulos Articulos = new Articulos();
-        public rArticulos()
+        public rArticulos ()
         {
             InitializeComponent();
             this.DataContext = Articulos;
-        }
-        private bool Validar()
-        {
-            bool Validado = true;
-            if (ArticulosIdTextBox.Text.Length == 0)
-            {
-                Validado = false;
-                MessageBox.Show("Transaccion Errada", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
-            return Validado;
         }
         private void Limpiar()
         {
@@ -44,9 +34,24 @@ namespace Parcial_Aplicada_1.UI
         {
             Limpiar();
         }
+
+        private bool Validar()
+        {
+            bool Validado = true;
+            if (ArticulosIdTextBox.Text.Length == 0)
+            {
+                Validado = false;
+                MessageBox.Show("Transaccion Errada", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            return Validado;
+        }
+
+       
+        
+       
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
-            var articulos = ArticulosBll.Buscar(Utilidades.ToInt(ArticulosIdTextBox.Text));
+            var articulos = ArticulosBLL.Buscar(Utilidades.ToInt(ArticulosIdTextBox.Text));
             if (articulos != null)
                 this.Articulos = articulos;
             else
@@ -54,10 +59,16 @@ namespace Parcial_Aplicada_1.UI
 
             this.DataContext = this.Articulos;
         }
-        private void EliminarButton_Click(object sender, RoutedEventArgs e)
+
+        private void NuevoButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            Limpiar();
+
+        }
+        private void EliminarButton_Click_1(object sender, RoutedEventArgs e)
         {
             {
-                if (ArticulosBll.Eliminar(Utilidades.ToInt(ArticulosIdTextBox.Text)))
+                if (ArticulosBLL.Eliminar(Utilidades.ToInt(ArticulosIdTextBox.Text)))
                 {
                     Limpiar();
                     MessageBox.Show("Registro Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -72,7 +83,7 @@ namespace Parcial_Aplicada_1.UI
                 if (!Validar())
                     return;
 
-                var paso = ArticulosBll.Guardar(Articulos);
+                var paso = ArticulosBLL.Guardar(Articulos);
                 if (paso)
                 {
                     Limpiar();
@@ -115,5 +126,9 @@ namespace Parcial_Aplicada_1.UI
 
         }
 
+       
+        
+
+        
     }
 }

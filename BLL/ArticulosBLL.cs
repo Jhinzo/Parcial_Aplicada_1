@@ -17,113 +17,154 @@ using Parcial_Aplicada_1.Entidades;
 
 namespace Parcial_Aplicada_1.BLL
 {
-    public class ArticulosBll
+    public class ArticulosBLL
     {
         public static bool Guardar(Articulos articulos)
         {
-            Contexto db = new Contexto();
+            Contexto contexto = new Contexto();
             bool paso = false;
 
             try
             {
-                if (db.Articulos.Add(articulos) != null)
+                if (contexto.Articulos.Add(articulos) != null)
                 {
-                    paso = (db.SaveChanges() > 0);
+                    paso = (contexto.SaveChanges() > 0);
                 }
             }
-            catch
+            catch (Exception)
             {
                 throw;
             }
             finally
             {
-                db.Dispose();
+                contexto.Dispose();
             }
             return paso;
         }
 
         public static bool Modificar(Articulos articulos)
         {
-            Contexto db = new Contexto();
             bool paso = false;
+            Contexto contexto = new Contexto();
+
 
             try
             {
-                db.Entry(articulos).State = EntityState.Modified;
-                paso = (db.SaveChanges() > 0);
+                contexto.Entry(articulos).State = EntityState.Modified;
+                paso = (contexto.SaveChanges() > 0);
             }
-            catch
+            catch (Exception)
             {
                 throw;
             }
             finally
             {
-                db.Dispose();
+                contexto.Dispose();
             }
             return paso;
         }
 
         public static bool Eliminar(int id)
         {
-            Contexto db = new Contexto();
             bool paso = false;
+            Contexto contexto = new Contexto();
+
 
             try
             {
-                var eliminar = db.Articulos.Find(id);
-                db.Entry(eliminar).State = EntityState.Deleted;
-                paso = (db.SaveChanges() > 0);
+                var articulos = contexto.Articulos.Find(id);
+                if (articulos != null)
+                {
+                    contexto.Articulos.Remove(articulos);
+                    paso = contexto.SaveChanges() > 0;
+                }
             }
-            catch
+            catch (Exception)
             {
                 throw;
             }
             finally
             {
-                db.Dispose();
+                contexto.Dispose();
             }
             return paso;
         }
 
         public static Articulos Buscar(int id)
         {
-            Contexto db = new Contexto();
-            Articulos articulos = new Articulos();
+            Contexto contexto = new Contexto();
+            Articulos articulos;
 
             try
             {
-                articulos = db.Articulos.Find(id);
+                articulos = contexto.Articulos.Find(id);
             }
-            catch
+            catch (Exception)
             {
                 throw;
             }
             finally
             {
-                db.Dispose();
+                contexto.Dispose();
             }
             return articulos;
         }
 
         public static List<Articulos> GetList(Expression<Func<Articulos, bool>> articulos)
         {
-            Contexto db = new Contexto();
+            Contexto contexto = new Contexto();
             List<Articulos> listado = new List<Articulos>();
 
             try
             {
-                listado = db.Articulos.Where(articulos).ToList();
+                listado = contexto.Articulos.Where(articulos).ToList();
             }
-            catch
+            catch (Exception)
             {
                 throw;
             }
             finally
             {
-                db.Dispose();
+                contexto.Dispose();
             }
 
             return listado;
         }
-    }
+        public static bool Existe(int id)
+        {
+            Contexto contexto = new Contexto();
+            bool encontrado = false;
+            try
+            {
+                encontrado = contexto.Articulos.Any(d => d.ArticuloId == id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return encontrado;
+        }
+        public static List<Articulos> GetArticulos()
+        {
+            List<Articulos> lista = new List<Articulos>();
+            Contexto contexto = new Contexto();
+            try
+            {
+                lista = contexto.Articulos.ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return lista;
+        }
+        }
 }

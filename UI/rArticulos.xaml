@@ -17,9 +17,9 @@
         <TextBox x:Name="ExistenciaTextBox" Text="{Binding Existencia}" HorizontalAlignment="Left" Margin="150,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" />
         <TextBox x:Name="CostoTextBox"       Text="{Binding Costo}" HorizontalAlignment="Left" Margin="150,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" />
         <TextBox x:Name="ValorInventarioTextBox" Text="{Binding ValorInventario}" HorizontalAlignment="Left" Margin="150,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"/>
-        <Button x:Name="NuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="100,340,0,0" VerticalAlignment="Top" Height="40" Width="60"/>
+        <Button x:Name="NuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="100,340,0,0" VerticalAlignment="Top" Height="40" Width="60" Click="NuevoButton_Click_1"/>
         <Button x:Name="GuardarButton" Content="Guarda" HorizontalAlignment="Left" Margin="300,340,0,0" VerticalAlignment="Top" Height="40" Width="60" Click="GuardarButton_Click"/>
-        <Button x:Name="EliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="500,340,0,0" VerticalAlignment="Top" Height="40" Width="60"/>
+        <Button x:Name="EliminarButton" Content="Eliminar" HorizontalAlignment="Left" Margin="500,340,0,0" VerticalAlignment="Top" Height="40" Width="60" Click="EliminarButton_Click_1"/>
         <Button x:Name="BuscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="255,50,0,0" VerticalAlignment="Top" Click="BuscarButton_Click" Height="40" Width="60"/>
 
     </Grid>

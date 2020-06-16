@@ -14,14 +14,7 @@ namespace Parcial_Aplicada_1.Entidades
         public double Costo { get; set; }
         public double ValorInventario { get; set; }
 
-        public Articulos()
-        {
-            ArticuloId = 0;
-            Descripcion = string.Empty;
-            Existencia = 0;
-            Costo = 0;
-            ValorInventario = 0;
-        }
+     
     }
 }
 
