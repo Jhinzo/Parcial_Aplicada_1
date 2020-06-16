@@ -4,6 +4,7 @@ using Parcial_Aplicada_1.DAL;
 using Parcial_Aplicada_1.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace Parcial_Aplicada_1.BLL
@@ -94,7 +95,13 @@ namespace Parcial_Aplicada_1.BLL
             {
                 db.Dispose();
             }
-            return ar
+            return articulos;
+        }
+
+        public static List<Articulos> GetList(Expression<Func<Articulos,bool>> articulos)
+        {
+            Contexto db = new Contexto();
+            List<Articulos> listado = new List<Articulos>();
         }
     }
 }
